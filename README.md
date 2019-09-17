@@ -7,10 +7,8 @@ který rozpoznává barvy a servo motor, který dokáže tlačit nebo se otáče
 Přilepím na něj papírovou "ruku", která po rozpoznání barvy senzorem odvede danou věc na správné místo 
 (nejspíš do jednoduchých papírových / plastových nádob). K vývoji kódu budu používat zpočátku Arduino IDE a poté Platformio.
 
-Důlěžité příkazy: 
-pio run
-pio run -t upload -> upload na Arduino
-pio monitor device
+Důlěžité příkazy: pio run -t upload -> upload na Arduino
+                  pio monitor device
 
 Součástky: Arduino UNO, TCS3200 Color Sensor, 2x Servo motor, kabely, nepájivé pole
 
