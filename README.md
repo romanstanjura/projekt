@@ -6,7 +6,6 @@ Postup: vytvořit krabičku, na kterou přilepím nepájivé pole, připojím Ar
 K vývoji kódu budu používat zpočátku Arduino IDE a poté Platformio.
 
 Důlěžité příkazy: 
-
 pio run                                                                                                                      pio run -t upload  -> upload na Arduino                                                                                      pio device monitor -> monitoruje ve VS Code terminálu
 
 Součástky: Arduino UNO, TCS3200 Color Sensor, 2x Servo motor, kabely, nepájivé pole
