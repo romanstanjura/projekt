@@ -12,7 +12,8 @@ Důlěžité příkazy: pio run -t upload -> upload na Arduino
 
 Součástky: Arduino UNO, TCS3200 Color Sensor, 2x Servo motor, kabely, nepájivé pole
 
-Odkazy: Platformio  - https://docs.platformio.org/en/latest/quickstart.html                                                             Servo motor - https://www.youtube.com/watch?v=ditS0a28Sko                                                                       
+Odkazy: Platformio  - https://docs.platformio.org/en/latest/quickstart.html
+Servo motor - https://www.youtube.com/watch?v=ditS0a28Sko                                                                       
 Arduino     - https://www.youtube.com/watch?v=nL34zDTPkcs                                                                       
 KiCad       - https://www.youtube.com/watch?v=-tN14xlWWmA                                                                       
 
