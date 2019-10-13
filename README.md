@@ -19,25 +19,31 @@ KiCad              - https://www.youtube.com/watch?v=-tN14xlWWmA
 
 EDIT: Při tvorbě projektu nebudu používat nepájivé pole, ale sensor a servo motory k Arduinu připojím přes propojovací kabely F-F (samice-samice).
 
-ROZPOZNÁVÁNÍ BAREV - KÓD
+ROZPOZNÁVÁNÍ BAREV podle RGB 
 
 if(R<45 & R>32 & G<65 & G>55){
     barva = 1; // červená
   }
+  
   if(G<55 & G>43 & B<47 &B>35){
     barva = 2; // oranžová
   }
+  
   if(R<53 & R>40 & G<53 & G>40){
     barva = 3; // zelená
   }
+  
   if(R<38 & R>24 & G<44 & G>30){
     barva = 4; // žlutá
   }
+  
   if(R<56 & R>46 & G<65 & G>55){
     barva = 5; // hnědá
   }
+  
   if (G<58 & G>45 & B<40 &B>26){
     barva = 6; // modrá
   }
+  
   return barva;  
 }
