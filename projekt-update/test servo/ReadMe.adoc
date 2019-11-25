@@ -1,0 +1,3 @@
+TEST SERVO MOTORU
+
+Jednoduchý test servo motoru v Arudino IDE. Připojený servo motor k pinu č.7 se po spuštění otočí o 90 stupňů, po vteřině o dalších 90 stupňů, po vteřině se vrátí zpět. Slouží pouze jako test, abych věděl, jak servo motor funguje. Čas otočení je určený delayem.
