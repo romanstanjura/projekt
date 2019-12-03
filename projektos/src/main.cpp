@@ -1,4 +1,5 @@
 #include <Servo.h>
+#include <Arduino.h>
 #define S0 2
 #define S1 3
 #define S2 4
@@ -6,8 +7,55 @@
 #define sensorOut 6
 Servo topServo;
 Servo bottomServo;
-int frequency = 0;
 int color=0;
+int frequency = 0;
+
+int readColor() {
+  digitalWrite(S2, LOW);
+  digitalWrite(S3, LOW);
+  frequency = pulseIn(sensorOut, LOW);
+  int R = frequency;
+  Serial.print("R= ");
+  Serial.print(frequency);
+  Serial.print("  ");
+  delay(50);
+  digitalWrite(S2, HIGH);
+  digitalWrite(S3, HIGH);
+  frequency = pulseIn(sensorOut, LOW);
+  int G = frequency;
+  Serial.print("G= ");
+  Serial.print(frequency);
+  Serial.print("  ");
+  delay(50);
+  digitalWrite(S2, LOW);
+  digitalWrite(S3, HIGH);
+  frequency = pulseIn(sensorOut, LOW);
+  int B = frequency;
+  Serial.print("B= ");
+  Serial.print(frequency);
+  Serial.println("  ");
+  delay(50);
+  if((R<45 && R>32) && (G<65 && G>55)){
+    color = 1; // červená
+  }
+  if((G<55 && G>43) && (B<47 && B>35)){
+    color = 2; // oranžová
+  }
+  if((R<53 && R>40) && (G<53 && G>40)){
+    color = 3; // zelená
+  }
+  if((R<38 && R>24) && (G<44 && G>30)){
+    color = 4; // žlutá
+  }
+  if((R<56 && R>46) && (G<65 && G>55)){
+    color = 5; // hnědá
+  }
+  if ((G<58 && G>45) && (B<40 && B > 26)){
+    color = 6; // modrá
+  }
+  return color;  
+}
+
 void setup() {
   pinMode(S0, OUTPUT);
   pinMode(S1, OUTPUT);
@@ -68,49 +116,4 @@ void loop() {
     delay(2);
   }
   color=0;
-}
-int readColor() {
-  digitalWrite(S2, LOW);
-  digitalWrite(S3, LOW);
-  frequency = pulseIn(sensorOut, LOW);
-  int R = frequency;
-  Serial.print("R= ");
-  Serial.print(frequency);
-  Serial.print("  ");
-  delay(50);
-  digitalWrite(S2, HIGH);
-  digitalWrite(S3, HIGH);
-  frequency = pulseIn(sensorOut, LOW);
-  int G = frequency;
-  Serial.print("G= ");
-  Serial.print(frequency);
-  Serial.print("  ");
-  delay(50);
-  digitalWrite(S2, LOW);
-  digitalWrite(S3, HIGH);
-  frequency = pulseIn(sensorOut, LOW);
-  int B = frequency;
-  Serial.print("B= ");
-  Serial.print(frequency);
-  Serial.println("  ");
-  delay(50);
-  if(R<45 & R>32 & G<65 & G>55){
-    color = 1; // červená
-  }
-  if(G<55 & G>43 & B<47 &B>35){
-    color = 2; // oranžová
-  }
-  if(R<53 & R>40 & G<53 & G>40){
-    color = 3; // zelená
-  }
-  if(R<38 & R>24 & G<44 & G>30){
-    color = 4; // žlutá
-  }
-  if(R<56 & R>46 & G<65 & G>55){
-    color = 5; // hnědá
-  }
-  if (G<58 & G>45 & B<40 &B>26){
-    color = 6; // modrá
-  }
-  return color;  
 }
